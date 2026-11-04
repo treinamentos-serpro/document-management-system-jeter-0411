@@ -2,11 +2,7 @@ const crypto = require('node:crypto');
 const path = require('node:path');
 const documentRepository = require('../repositories/documentRepository');
 const fileRepository = require('../repositories/fileRepository');
-
-function toPublicDocument(document) {
-  const { storageName, ...publicDocument } = document;
-  return publicDocument;
-}
+const { toPublicDocument } = require('./documentPresenter');
 
 function createDocument(file, owner) {
   const document = {
